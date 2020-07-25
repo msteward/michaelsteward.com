@@ -1,16 +1,16 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "michaelsteward.com",
+  "description": "Personal Site",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Michael Steward <stewardm@gmail.com>",
   "dependencies": {
-    "gatsby": "2.20.12",
-    "gatsby-plugin-manifest": "2.3.3",
-    "gatsby-plugin-offline": "3.1.2",
-    "gatsby-plugin-react-helmet": "3.2.1",
+    "gatsby": "2.24.11",
+    "gatsby-plugin-manifest": "2.4.21",
+    "gatsby-plugin-offline": "3.2.21",
+    "gatsby-plugin-react-helmet": "3.3.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^6.1.0"
   },
   "keywords": [
     "gatsby"
@@ -23,7 +23,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^2.0.4"
+    "prettier": "^2.0.5"
   },
   "repository": {
     "type": "git",
