@@ -11,7 +11,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          michael steward
+          &gt; michael steward
         </h1>
       </main>
     </div>
