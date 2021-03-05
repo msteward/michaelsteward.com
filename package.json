@@ -1,32 +1,20 @@
 {
   "name": "michaelsteward.com",
-  "description": "Personal Site",
-  "version": "1.0.0",
-  "author": "Michael Steward <stewardm@gmail.com>",
-  "dependencies": {
-    "gatsby": "2.24.11",
-    "gatsby-plugin-manifest": "2.4.21",
-    "gatsby-plugin-offline": "3.2.21",
-    "gatsby-plugin-react-helmet": "3.3.10",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "10.0.7",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "@types/node": "^14.14.31",
+    "@types/react": "^17.0.2",
+    "typescript": "^4.2.3"
   }
 }
