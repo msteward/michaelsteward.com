@@ -8,6 +8,7 @@ export default function Home() {
         <title>Michael Steward</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Homepage for Michael Steward" />
+        <meta name="theme-color" content="#317EFB"/>
       </Head>
 
       <main className={styles.main}>
