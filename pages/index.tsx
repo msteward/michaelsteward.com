@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>&gt; michael steward</h1>
       </main>
-      <SpeedInsights />
     </div>
   );
 }
