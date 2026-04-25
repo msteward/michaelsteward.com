@@ -42,6 +42,39 @@
   color: var(--ink-dim);
 }
 
+.themeToggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: var(--ink-mute);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.themeToggle:focus-visible {
+  outline: 1px solid var(--accent-soft);
+  outline-offset: 3px;
+}
+
+.themeActive {
+  color: var(--ink);
+}
+
+.themeInactive {
+  color: var(--ink-mute);
+  transition: color 0.2s ease;
+}
+
+.themeToggle:hover .themeInactive {
+  color: var(--ink-dim);
+}
+
 /* ── Main composition ─────────────────────────────────────────── */
 .main {
   display: grid;

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Michael Steward</title>
     <meta name="description" content="Michael Steward — personal site." />
-    <meta name="theme-color" content="#0d0c0a" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0c0e0c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f3ea" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,6 +17,18 @@
     />
   </head>
   <body>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored === 'light' || stored === 'dark' ? stored : (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

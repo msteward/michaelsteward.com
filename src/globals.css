@@ -1,17 +1,44 @@
 :root {
-  --bg: #0d0c0a;
-  --bg-elev: #15130f;
-  --rule: #2a261e;
-  --ink: #ece6d6;
-  --ink-dim: #a59f8e;
-  --ink-mute: #6e6857;
-  --accent: #f0a830;
-  --accent-soft: #f0a83033;
-
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, monospace;
   --font-display: "Instrument Serif", "Iowan Old Style", "Apple Garamond",
     Georgia, serif;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0c0e0c;
+  --bg-elev: #11140f;
+  --rule: #262a25;
+  --ink: #e6ebdf;
+  --ink-dim: #9aa593;
+  --ink-mute: #646d5d;
+  --accent: #7da87b;
+  --accent-soft: #7da87b33;
+  --selection-ink: #0c0e0c;
+
+  --atmos-glow-1: rgba(125, 168, 123, 0.08);
+  --atmos-glow-2: rgba(90, 140, 110, 0.045);
+  --atmos-vignette: rgba(0, 0, 0, 0.55);
+  --atmos-scanline: rgba(255, 255, 255, 0.012);
+  --atmos-scanline-blend: overlay;
+}
+
+:root[data-theme="light"] {
+  --bg: #f6f3ea;
+  --bg-elev: #efeadd;
+  --rule: #d8d3c1;
+  --ink: #1f231d;
+  --ink-dim: #5a6354;
+  --ink-mute: #8a9183;
+  --accent: #4f7f4f;
+  --accent-soft: #4f7f4f1f;
+  --selection-ink: #f6f3ea;
+
+  --atmos-glow-1: rgba(79, 127, 79, 0.06);
+  --atmos-glow-2: rgba(120, 150, 110, 0.04);
+  --atmos-vignette: rgba(60, 80, 55, 0.06);
+  --atmos-scanline: transparent;
+  --atmos-scanline-blend: normal;
 }
 
 * {
@@ -39,7 +66,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Warm vignette + scanline atmosphere */
+/* Atmospheric wash + scanlines (theme-aware via custom properties) */
 body::before {
   content: "";
   position: fixed;
@@ -48,18 +75,18 @@ body::before {
   background:
     radial-gradient(
       1100px 700px at 22% 18%,
-      rgba(240, 168, 48, 0.08),
+      var(--atmos-glow-1),
       transparent 60%
     ),
     radial-gradient(
       900px 600px at 82% 88%,
-      rgba(120, 92, 220, 0.05),
+      var(--atmos-glow-2),
       transparent 65%
     ),
     radial-gradient(
       1400px 900px at 50% 50%,
       transparent 0%,
-      rgba(0, 0, 0, 0.55) 100%
+      var(--atmos-vignette) 100%
     );
   z-index: 0;
 }
@@ -71,12 +98,12 @@ body::after {
   pointer-events: none;
   background-image: repeating-linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.012) 0px,
-    rgba(255, 255, 255, 0.012) 1px,
+    var(--atmos-scanline) 0px,
+    var(--atmos-scanline) 1px,
     transparent 1px,
     transparent 3px
   );
-  mix-blend-mode: overlay;
+  mix-blend-mode: var(--atmos-scanline-blend);
   z-index: 1;
 }
 
@@ -87,5 +114,5 @@ a {
 
 ::selection {
   background: var(--accent);
-  color: #1a1410;
+  color: var(--selection-ink);
 }
