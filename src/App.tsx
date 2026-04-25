@@ -23,6 +23,9 @@ const links: LinkItem[] = [
   },
 ];
 
+const LOCATION = 'Vancouver, Canada';
+const TIMEZONE = 'America/Vancouver';
+
 function useClock() {
   const [now, setNow] = useState(() => new Date());
   useEffect(() => {
@@ -33,13 +36,13 @@ function useClock() {
     hour: '2-digit',
     minute: '2-digit',
     hour12: false,
+    timeZone: TIMEZONE,
   });
-  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'local';
-  return { time, tz };
+  return { time };
 }
 
 export default function App() {
-  const { time, tz } = useClock();
+  const { time } = useClock();
   const year = new Date().getFullYear();
 
   return (
@@ -50,7 +53,7 @@ export default function App() {
           <span>michaelsteward.com</span>
         </div>
         <div className={styles.right}>
-          <span>{tz.replace('_', ' ')}</span>
+          <span>{LOCATION}</span>
           <span aria-hidden>·</span>
           <span>{time}</span>
         </div>
@@ -68,12 +71,6 @@ export default function App() {
           <div className={styles.row}>
             <span className={styles.key}>handle</span>
             <span className={styles.val}>stewardm</span>
-          </div>
-          <div className={styles.row}>
-            <span className={styles.key}>status</span>
-            <span className={styles.val}>
-              <em>online</em>, building &amp; tinkering
-            </span>
           </div>
           <div className={styles.row}>
             <span className={styles.key}>note</span>
