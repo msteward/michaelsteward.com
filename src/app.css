@@ -38,7 +38,7 @@
   display: inline-block;
 }
 
-.statusbar .right span:not(.dot) {
+.statusbar .right > span {
   color: var(--ink-dim);
 }
 
@@ -62,17 +62,34 @@
   outline-offset: 3px;
 }
 
-.themeActive {
-  color: var(--ink);
-}
-
-.themeInactive {
+/* Theme option pills — active one gets brackets and full ink colour */
+.themeOpt {
   color: var(--ink-mute);
   transition: color 0.2s ease;
 }
 
-.themeToggle:hover .themeInactive {
+[data-theme="light"] .themeOpt[data-theme-opt="light"],
+[data-theme="dark"]  .themeOpt[data-theme-opt="dark"] {
+  color: var(--ink);
+}
+
+[data-theme="light"] .themeOpt[data-theme-opt="light"]::before,
+[data-theme="dark"]  .themeOpt[data-theme-opt="dark"]::before {
+  content: "[ ";
+}
+
+[data-theme="light"] .themeOpt[data-theme-opt="light"]::after,
+[data-theme="dark"]  .themeOpt[data-theme-opt="dark"]::after {
+  content: " ]";
+}
+
+.themeToggle:hover .themeOpt {
   color: var(--ink-dim);
+}
+
+[data-theme="light"] .themeToggle:hover .themeOpt[data-theme-opt="light"],
+[data-theme="dark"]  .themeToggle:hover .themeOpt[data-theme-opt="dark"] {
+  color: var(--ink);
 }
 
 /* ── Main composition ─────────────────────────────────────────── */
@@ -285,34 +302,18 @@
 
 /* ── Animations ───────────────────────────────────────────────── */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes blink {
-  0%, 49% {
-    opacity: 1;
-  }
-  50%, 100% {
-    opacity: 0;
-  }
+  0%,  49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
