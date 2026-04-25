@@ -52,6 +52,28 @@
   font-size: 4rem;
 }
 
+.links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1rem;
+}
+
+.links a {
+  color: #555;
+  text-decoration: none;
+  border-bottom: 1px dotted #aaa;
+  padding-bottom: 1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.links a:hover,
+.links a:focus {
+  color: #0070f3;
+  border-bottom-color: #0070f3;
+}
+
 .title,
 .description {
   text-align: center;
