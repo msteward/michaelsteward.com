@@ -47,7 +47,6 @@ export default function App() {
       <header className={styles.statusbar}>
         <div className={styles.left}>
           <span className={styles.dot} aria-hidden />
-          <span>session · michaelsteward.com</span>
         </div>
         <div className={styles.right}>
           <span>{tz.replace('_', ' ')}</span>
@@ -57,7 +56,7 @@ export default function App() {
       </header>
 
       <main className={styles.main}>
-        <span className={styles.eyebrow}>~ / personal site / v2</span>
+        <span className={styles.eyebrow}>~ / personal site</span>
 
         <h1 className={styles.name}>
           Michael <span className={styles.last}>Steward</span>
