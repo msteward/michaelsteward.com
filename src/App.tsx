@@ -47,6 +47,7 @@ export default function App() {
       <header className={styles.statusbar}>
         <div className={styles.left}>
           <span className={styles.dot} aria-hidden />
+          <span>michaelsteward.com</span>
         </div>
         <div className={styles.right}>
           <span>{tz.replace('_', ' ')}</span>
