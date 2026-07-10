@@ -8,8 +8,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@types/node": "22.13.0",
-    "typescript": "6.0.3",
-    "vite": "8.0.10"
+    "@types/node": "24.13.3",
+    "typescript": "7.0.2",
+    "vite": "8.1.4"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }
